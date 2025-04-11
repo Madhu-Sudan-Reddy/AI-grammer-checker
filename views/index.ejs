@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Grammar Checker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/views/style.css" />
+  </head>
+  <body>
+    <div id="body">
+      <header>
+        <div class="header">
+          <h2>
+            Bridgee <span><i class="fa-solid fa-bridge"></i></span>
+          </h2>
+        </div>
+      </header>
+
+      <main>
+        <div>
+          <div class="group">
+            <div class="hero">
+              <h1>Free AI Grammar Checker</h1>
+            </div>
+            <div class="power">
+              Powered By Gemini <img src="/Public/images/logo_gemini.png" />
+            </div>
+          </div>
+          <form action="/correct" method="POST">
+            <div class="boxes">
+              <div class="inputdiv">
+                <pre>Input Your Text <i class="fa-regular fa-keyboard"></i></pre>
+                <p class="subtext">
+                  Enter your text below and let our AI analyze and improve it
+                </p>
+                <textarea
+                  class="form-control input"
+                  name="text"
+                  id="floatingTextarea1"
+                  style="height: 200px"
+                  required
+                  placeholder="Type or paste your text here..."
+                >
+<%=orginalText||"" %></textarea
+                >
+
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  ,
+                  class="input"
+                  onclick="pasteText()"
+                  ,
+                >
+                  <span class="ispace">
+                    <i class="fa-regular fa-clipboard"></i
+                  ></span>
+                  Paste Text
+                </button>
+              </div>
+              <div class="outputdiv">
+                <pre>AI-Corrected output <i class="fa-solid fa-robot"></i></pre>
+                <p class="subtext">Grammatically improved text.</p>
+                <div class="form-control output" id="floatingTextarea2">
+                  <p placeholder="AI corrected Text"><%= corrected %></p>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  ,
+                  class="output"
+                  onclick="copyText()"
+                >
+                  <span class="ispace"><i class="fa-regular fa-copy"></i></span>
+                  Copy Text
+                </button>
+              </div>
+            </div>
+            <div id="CTA">
+              <button type="submit" class="btn btn-primary">
+                <span class="iispace"><i class="fa-solid fa-pen"></i></span>
+                Enhance with AI
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+
+      <footer>
+        <p>
+          <span class="iispace"><i class="fa-solid fa-copyright"></i></span>
+          @Madhu
+        </p>
+      </footer>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    >
+          function pasteText() {
+        navigator.clipboard.readText()
+          .then((text) => {
+            const inputElements = document.getElementsByClassName('input');
+            if (inputElements.length > 0) {
+              inputElements[0].value = text;
+            }
+          })
+          .catch((err) => {
+            console.error('Failed to paste text: ', err);
+          });
+      }
+
+      function copyText() {
+        const outputElements = document.getElementsByClassName('output');
+        if (outputElements.length > 0) {
+          const text = outputElements[0].innerText;
+          navigator.clipboard.writeText(text)
+            .then(() => {
+              console.log('Text copied successfully');
+            })
+            .catch((err) => {
+              console.error('Failed to copy text: ', err);
+            });
+        }
+      }
+    </script>
+  </body>
+</html>

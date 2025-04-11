@@ -1,0 +1,143 @@
+.header {
+  padding: 0.5rem 60px;
+  color: #202f66;
+  background-color: #f7f8f9;
+  width: 100vw;
+  height: 4rem;
+  box-shadow: 0.05px 0px 5px;
+}
+.header h2 {
+  font-size: xx-large;
+}
+
+.header i {
+  color: #fc5f27;
+}
+
+main {
+  background-color: #62a7f165;
+  width: 100vw;
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+}
+
+.group {
+  height: auto;
+  width: auto;
+  justify-self: center;
+}
+.hero {
+  color: #202f66;
+  padding-top: 30px;
+  margin: 30px 0;
+}
+.power {
+  width: 250px;
+  height: 35px;
+  background-color: #ffffff;
+  color: #1f80e8;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0.05px 0.05px 0.5px gray;
+  padding: 5px 0 5px 0;
+  margin: 30px 0 30px 90px;
+}
+.power img {
+  height: 20px;
+  width: 20px;
+  object-fit: fill;
+  margin: 5px, 20px;
+  margin-left: 7px;
+}
+
+.boxes {
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+}
+
+.inputdiv {
+  padding: 20px;
+  width: 500px;
+  height: 430px;
+  background-color: #f7f8f9;
+  justify-items: center;
+  display: inline-block;
+  margin: 50px;
+  color: #434343;
+  box-shadow: 0.05px 0px 1px;
+  border-radius: 2px;
+}
+
+.inputdiv pre {
+  font-size: x-large;
+  font-weight: 800;
+  color: #202f66;
+}
+
+.subtext {
+  font-size: small;
+  color: #202f66;
+}
+
+.form-control {
+  margin: 30px;
+  width: 400px;
+  border-radius: 5px;
+  border: 0.5px solid #434343;
+  background-color: #f7f8f9;
+  color: #434343;
+}
+
+.outputdiv {
+  padding: 20px;
+  width: 500px;
+  height: 430px;
+  background-color: #f7f8f9;
+  justify-items: center;
+  display: inline-block;
+  margin: 50px;
+  color: #434343;
+  box-shadow: 0.05px 0px 1px;
+  border-radius: 2px;
+}
+
+.output {
+  min-height: 200px;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+
+.outputdiv pre {
+  font-size: x-large;
+  font-weight: 800;
+  color: #202f66;
+}
+
+.ispace {
+  margin-right: 5px;
+}
+
+.iispace {
+  margin-right: 10px;
+}
+
+#CTA {
+  justify-self: center;
+  align-self: center;
+}
+
+.btn-primary {
+  height: 40px;
+  width: 300px;
+}
+
+footer {
+  height: 50px;
+  width: 100vw;
+  background-color: #202f66;
+  color: #f7f8f9;
+  text-align: center;
+  padding-top: 5px;
+}
